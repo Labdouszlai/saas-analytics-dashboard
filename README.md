@@ -1,76 +1,118 @@
-# Pulse — SaaS Analytics Dashboard
+# Pulse Analytics
 
-A full-stack analytics dashboard for tracking revenue, user growth, traffic, and
-transactions in real time. Built and maintained by **Larbi Abdelkader**.
+A modern analytics dashboard built to explore how SaaS platforms track business performance, user activity, and revenue metrics in real time.
+
+This project was developed as a full-stack application using Next.js, PostgreSQL, and TypeScript, with a focus on clean architecture, authentication, data visualization, and responsive user experience.
+
+## Overview
+
+Pulse Analytics provides a centralized dashboard where users can monitor key business metrics through interactive charts and reports. Each account has its own isolated data, making the application behave like a real multi-user SaaS product.
 
 ## Features
 
-- Email + password authentication with secure sessions
-- KPI cards with period-over-period comparisons (revenue, users, sessions, conversion)
-- Revenue trend area chart and sessions/users bar chart
-- Traffic-by-channel breakdown (donut chart)
-- Recent transactions table
-- Per-user data isolation — every account sees only its own metrics
-- Responsive layout (desktop and mobile)
+* Secure email and password authentication
+* User-specific analytics and dashboard data
+* Revenue tracking and growth monitoring
+* KPI cards with period-over-period comparisons
+* Interactive charts for revenue, traffic, and user activity
+* Traffic source breakdown by channel
+* Recent transactions overview
+* Responsive design for desktop and mobile devices
 
-## Tech Stack
+## Technology Stack
 
-- **Framework:** Next.js (App Router) + React
-- **Language:** TypeScript
-- **Database:** PostgreSQL (Neon)
-- **ORM:** Drizzle ORM
-- **Auth:** Better Auth (email + password)
-- **Charts:** Recharts
-- **Styling:** Tailwind CSS
+### Frontend
+
+* Next.js (App Router)
+* React
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Next.js Server Actions
+* Better Auth
+
+### Database
+
+* PostgreSQL
+* Drizzle ORM
+* Neon Database
+
+### Data Visualization
+
+* Recharts
+
+## What I Built
+
+This project demonstrates several important full-stack development concepts:
+
+* Authentication and session management
+* Database design and ORM integration
+* Server-side data fetching
+* Analytics dashboard development
+* Data visualization
+* Responsive UI implementation
+* Multi-user application architecture
 
 ## Getting Started
 
-1. Install dependencies:
+Install dependencies:
 
-   ```bash
-   pnpm install
-   ```
+```bash
+pnpm install
+```
 
-2. Create a `.env.local` file in the project root:
+Create a `.env.local` file:
 
-   ```bash
-   DATABASE_URL="your-postgres-connection-string"
-   BETTER_AUTH_SECRET="a-random-string-at-least-32-characters"
-   # Optional, only for custom domains:
-   # BETTER_AUTH_URL="https://your-domain.com"
-   ```
+```env
+DATABASE_URL=your_database_url
+BETTER_AUTH_SECRET=your_secret_key
+```
 
-   Generate a secret with:
+Start the development server:
 
-   ```bash
-   openssl rand -base64 32
-   ```
+```bash
+pnpm dev
+```
 
-3. Run the development server:
+Then visit:
 
-   ```bash
-   pnpm dev
-   ```
+```text
+http://localhost:3000
+```
 
-4. Open [http://localhost:3000](http://localhost:3000), create an account at `/sign-up`,
-   and your dashboard will be populated with sample analytics data.
+Create an account and explore the dashboard.
 
 ## Project Structure
 
-```
+```text
 app/
-  actions/        Server actions (data fetching + seeding)
-  api/auth/       Better Auth handler
-  sign-in/        Sign-in page
-  sign-up/        Sign-up page
-  page.tsx        Protected dashboard
 components/
-  dashboard/      Charts, KPI cards, sidebar, transactions table
+hooks/
 lib/
-  auth.ts         Better Auth server config
-  db/             Drizzle client + schema
+public/
 ```
+
+The project follows a modular structure to keep authentication, database access, business logic, and UI components organized and maintainable.
+
+## Future Improvements
+
+Planned enhancements include:
+
+* Settings page
+* CSV export
+* Advanced filtering
+* Pagination
+* Landing page
+* Enhanced analytics reports
+
+## Author
+
+Larbi Abdelkader
+
+Full Stack Developer focused on building SaaS applications, web platforms, and lightweight tools.
 
 ## License
 
-MIT © Larbi Abdelkader
+MIT
